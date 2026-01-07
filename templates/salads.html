@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Salads</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body class="menu-page-bg">
+
+<div class="container pt-5 pb-5">
+
+  <h1 class="menu-section-heading text-center mb-4 nonveg-title">
+    Salads
+  </h1>
+
+  <div class="row">
+
+<!-- 1 -->
+<div class="col-md-4"><div class="menu-item-card p-3 mb-4">
+<div class="menu-image-wrapper">
+<img src="{{ url_for('static', filename='images/green-salad.jpg') }}" class="menu-item-image w-100">
+</div>
+<h1 class="menu-card-title">Green Salad</h1>
+<div class="rating">
+<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+</div>
+<p class="menu-item-price">₹120</p>
+<form action="/add-to-cart" method="POST">
+<input type="hidden" name="name" value="Green Salad">
+<input type="hidden" name="price" value="120">
+<button class="add-cart-btn">Add to Cart</button>
+</form>
+</div></div>
+
+<!-- 2 -->
+<div class="col-md-4"><div class="menu-item-card p-3 mb-4">
+<div class="menu-image-wrapper">
+<img src="{{ url_for('static', filename='images/caesar-salad.jpg') }}" class="menu-item-image w-100">
+</div>
+<h1 class="menu-card-title">Caesar Salad</h1>
+<div class="rating">
+<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+</div>
+<p class="menu-item-price">₹180</p>
+<form action="/add-to-cart" method="POST">
+<input type="hidden" name="name" value="Caesar Salad">
+<input type="hidden" name="price" value="180">
+<button class="add-cart-btn">Add to Cart</button>
+</form>
+</div></div>
+
+<!-- 3 -->
+<div class="col-md-4"><div class="menu-item-card p-3 mb-4">
+<div class="menu-image-wrapper">
+<img src="{{ url_for('static', filename='images/fruit-salad.jpg') }}" class="menu-item-image w-100">
+</div>
+<h1 class="menu-card-title">Fruit Salad</h1>
+<div class="rating">
+<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+</div>
+<p class="menu-item-price">₹150</p>
+<form action="/add-to-cart" method="POST">
+<input type="hidden" name="name" value="Fruit Salad">
+<input type="hidden" name="price" value="150">
+<button class="add-cart-btn">Add to Cart</button>
+</form>
+</div></div>
+
+<!-- 4 -->
+<div class="col-md-4"><div class="menu-item-card p-3 mb-4">
+<div class="menu-image-wrapper">
+<img src="{{ url_for('static', filename='images/greek-salad.jpg') }}" class="menu-item-image w-100">
+</div>
+<h1 class="menu-card-title">Greek Salad</h1>
+<div class="rating">
+<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+</div>
+<p class="menu-item-price">₹170</p>
+<form action="/add-to-cart" method="POST">
+<input type="hidden" name="name" value="Greek Salad">
+<input type="hidden" name="price" value="170">
+<button class="add-cart-btn">Add to Cart</button>
+</form>
+</div></div>
+
+<!-- 5 -->
+<div class="col-md-4"><div class="menu-item-card p-3 mb-4">
+<div class="menu-image-wrapper">
+<img src="{{ url_for('static', filename='images/corn-salad.jpg') }}" class="menu-item-image w-100">
+</div>
+<h1 class="menu-card-title">Corn Salad</h1>
+<div class="rating">
+<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+</div>
+<p class="menu-item-price">₹140</p>
+<form action="/add-to-cart" method="POST">
+<input type="hidden" name="name" value="Corn Salad">
+<input type="hidden" name="price" value="140">
+<button class="add-cart-btn">Add to Cart</button>
+</form>
+</div></div>
+
+<!-- 6 -->
+<div class="col-md-4"><div class="menu-item-card p-3 mb-4">
+<div class="menu-image-wrapper">
+<img src="{{ url_for('static', filename='images/sprouts-salad.jpg') }}" class="menu-item-image w-100">
+</div>
+<h1 class="menu-card-title">Sprouts Salad</h1>
+<div class="rating">
+<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+</div>
+<p class="menu-item-price">₹130</p>
+<form action="/add-to-cart" method="POST">
+<input type="hidden" name="name" value="Sprouts Salad">
+<input type="hidden" name="price" value="130">
+<button class="add-cart-btn">Add to Cart</button>
+</form>
+</div></div>
+
+<!-- 7 -->
+<div class="col-md-4"><div class="menu-item-card p-3 mb-4">
+<div class="menu-image-wrapper">
+<img src="{{ url_for('static', filename='images/pasta-salad.jpg') }}" class="menu-item-image w-100">
+</div>
+<h1 class="menu-card-title">Pasta Salad</h1>
+<div class="rating">
+<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+</div>
+<p class="menu-item-price">₹190</p>
+<form action="/add-to-cart" method="POST">
+<input type="hidden" name="name" value="Pasta Salad">
+<input type="hidden" name="price" value="190">
+<button class="add-cart-btn">Add to Cart</button>
+</form>
+</div></div>
+
+<!-- 8 -->
+<div class="col-md-4"><div class="menu-item-card p-3 mb-4">
+<div class="menu-image-wrapper">
+<img src="{{ url_for('static', filename='images/avocado-salad.jpg') }}" class="menu-item-image w-100">
+</div>
+<h1 class="menu-card-title">Avocado Salad</h1>
+<div class="rating">
+<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+</div>
+<p class="menu-item-price">₹220</p>
+<form action="/add-to-cart" method="POST">
+<input type="hidden" name="name" value="Avocado Salad">
+<input type="hidden" name="price" value="220">
+<button class="add-cart-btn">Add to Cart</button>
+</form>
+</div></div>
+
+<!-- 9 -->
+<div class="col-md-4"><div class="menu-item-card p-3 mb-4">
+<div class="menu-image-wrapper">
+<img src="{{ url_for('static', filename='images/paneer-salad.jpg') }}" class="menu-item-image w-100">
+</div>
+<h1 class="menu-card-title">Paneer Salad</h1>
+<div class="rating">
+<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+</div>
+<p class="menu-item-price">₹200</p>
+<form action="/add-to-cart" method="POST">
+<input type="hidden" name="name" value="Paneer Salad">
+<input type="hidden" name="price" value="200">
+<button class="add-cart-btn">Add to Cart</button>
+</form>
+</div></div>
+
+<!-- 10 -->
+<div class="col-md-4"><div class="menu-item-card p-3 mb-4">
+<div class="menu-image-wrapper">
+<img src="{{ url_for('static', filename='images/Coleslaw.jpg') }}" class="menu-item-image w-100">
+</div>
+<h1 class="menu-card-title">Coleslaw</h1>
+<div class="rating">
+<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+</div>
+<p class="menu-item-price">₹140</p>
+<form action="/add-to-cart" method="POST">
+<input type="hidden" name="name" value="Coleslaw">
+<input type="hidden" name="price" value="140">
+<button class="add-cart-btn">Add to Cart</button>
+</form>
+</div></div>
+
+<!-- 11 -->
+<div class="col-md-4"><div class="menu-item-card p-3 mb-4">
+<div class="menu-image-wrapper">
+<img src="{{ url_for('static', filename='images/bean-salad.jpg') }}" class="menu-item-image w-100">
+</div>
+<h1 class="menu-card-title">Bean Salad</h1>
+<div class="rating">
+<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+</div>
+<p class="menu-item-price">₹160</p>
+<form action="/add-to-cart" method="POST">
+<input type="hidden" name="name" value="Bean Salad">
+<input type="hidden" name="price" value="160">
+<button class="add-cart-btn">Add to Cart</button>
+</form>
+</div></div>
+
+<!-- 12 -->
+<div class="col-md-4"><div class="menu-item-card p-3 mb-4">
+<div class="menu-image-wrapper">
+<img src="{{ url_for('static', filename='images/quinoa-salad.jpg') }}" class="menu-item-image w-100">
+</div>
+<h1 class="menu-card-title">Quinoa Salad</h1>
+<div class="rating">
+<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+</div>
+<p class="menu-item-price">₹230</p>
+<form action="/add-to-cart" method="POST">
+<input type="hidden" name="name" value="Quinoa Salad">
+<input type="hidden" name="price" value="230">
+<button class="add-cart-btn">Add to Cart</button>
+</form>
+</div></div>
+
+<!-- 13 -->
+<div class="col-md-4"><div class="menu-item-card p-3 mb-4">
+<div class="menu-image-wrapper">
+<img src="{{ url_for('static', filename='images/beetroot-salad.jpg') }}" class="menu-item-image w-100">
+</div>
+<h1 class="menu-card-title">Beetroot Salad</h1>
+<div class="rating">
+<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+</div>
+<p class="menu-item-price">₹130</p>
+<form action="/add-to-cart" method="POST">
+<input type="hidden" name="name" value="Beetroot Salad">
+<input type="hidden" name="price" value="130">
+<button class="add-cart-btn">Add to Cart</button>
+</form>
+</div></div>
+
+<!-- 14 -->
+<div class="col-md-4"><div class="menu-item-card p-3 mb-4">
+<div class="menu-image-wrapper">
+<img src="{{ url_for('static', filename='images/cucumber-salad.jpg') }}" class="menu-item-image w-100">
+</div>
+<h1 class="menu-card-title">Cucumber Salad</h1>
+<div class="rating">
+<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+</div>
+<p class="menu-item-price">₹120</p>
+<form action="/add-to-cart" method="POST">
+<input type="hidden" name="name" value="Cucumber Salad">
+<input type="hidden" name="price" value="120">
+<button class="add-cart-btn">Add to Cart</button>
+</form>
+</div></div>
+
+<!-- 15 -->
+<div class="col-md-4"><div class="menu-item-card p-3 mb-4">
+<div class="menu-image-wrapper">
+<img src="{{ url_for('static', filename='images/chickpea-salad.jpg') }}" class="menu-item-image w-100">
+</div>
+<h1 class="menu-card-title">Chickpea Salad</h1>
+<div class="rating">
+<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+</div>
+<p class="menu-item-price">₹170</p>
+<form action="/add-to-cart" method="POST">
+<input type="hidden" name="name" value="Chickpea Salad">
+<input type="hidden" name="price" value="170">
+<button class="add-cart-btn">Add to Cart</button>
+</form>
+</div></div>
+
+</div>
+
+<nav class="navbar navbar-light bg-white mt-4">
+  <div class="container justify-content-center">
+    <a href="/#exploreMenuSection" class="back-btn">← Back to Menu</a>
+  </div>
+</nav>
+
+</div>
+
+<script src="{{ url_for('static', filename='js/animations.js') }}"></script>
+</body>
+</html>

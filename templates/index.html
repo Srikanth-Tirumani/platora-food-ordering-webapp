@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"/>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/d1c2ea8b80.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+/>
+    <title>Platora | Order Food Online</title>
+
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+         <img src="{{ url_for('static', filename='images/platora-logo.png') }}"
+           class="platora-logo" />
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav ml-auto">
+
+        <nav class="navbar navbar-light bg-white shadow-sm px-4">
+          <span class="navbar-text font-weight-bold">
+            Welcome {{ user }} 👋
+          </span>
+
+          <a href="/logout" class="btn btn-outline-danger btn-sm">
+            Logout
+          </a>
+        </nav>
+
+
+            <a class="nav-link active" id="navItem1" href="#wcuSection">
+              Why Choose Us?
+              <span class="sr-only">(current)</span>
+            </a>
+            <a class="nav-link" href="#exploreMenuSection" id="navItem2">Explore Menu</a>
+            <a class="nav-link" href="#deliveryPaymentSection" id="navItem3">Delivery & Payment</a>
+            <a class="nav-link" href="#followUsSection" id="navItem4">Follow Us</a>
+           <a class="nav-link" href="/cart">
+            <i class="fa-solid fa-cart-shopping"></i>
+            Cart ({{ session.cart|length if session.cart else 0 }})
+          </a>
+          <a class="nav-link" href="/orders">
+            My Orders
+          </a>
+
+ 
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="banner-section-bg-container d-flex justify-content-center flex-column">
+      <div class="text-center">
+        <h1 class="banner-heading mb-3">Get Delicious Food Anytime</h1>
+        <p class="banner-caption mb-4">Eat Smart & Healthy</p>
+        <button class="custom-button"
+        onclick="location.href='#exploreMenuSection'">
+          View Menu
+        </button>
+
+        <button class="custom-outline-button"
+                onclick="location.href='/cart'">
+          Order Now
+        </button>
+
+      </div>
+    </div>
+    <div class="wcu-section pt-5 pb-5" id="wcuSection">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+
+            <div class="wcu-section pt-5 pb-5" id="wcuSection">
+  <div class="container">
+    <div class="row mb-4">
+      <div class="col-12 text-center">
+        <h1 class="wcu-section-heading">Why Choose Platora?</h1>
+        <p class="wcu-section-description">
+          Fast delivery • Fresh food • Best prices
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+
+      <!-- CARD 1 -->
+      <div class="col-12 col-md-4 mb-4">
+        <div class="wcu-card-new">
+          <div class="wcu-icon">
+            <i class="fas fa-shipping-fast"></i>
+          </div>
+          <h3>Lightning Fast Delivery</h3>
+          <p>
+            Get your food delivered hot & fresh in under 30 minutes.
+          </p>
+        </div>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="col-12 col-md-4 mb-4">
+        <div class="wcu-card-new">
+          <div class="wcu-icon">
+            <i class="fas fa-leaf"></i>
+          </div>
+          <h3>Fresh & Hygienic</h3>
+          <p>
+            Prepared with fresh ingredients from trusted kitchens.
+          </p>
+        </div>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="col-12 col-md-4 mb-4">
+        <div class="wcu-card-new">
+          <div class="wcu-icon">
+            <i class="fas fa-tags"></i>
+          </div>
+          <h3>Best Offers & Deals</h3>
+          <p>
+            Exciting discounts, cashback & daily deals just for you.
+          </p>
+        </div>
+      </div>
+
+      <!-- CARD 4 -->
+    <div class="col-12 col-md-4 mb-4">
+      <div class="wcu-card-new">
+        <div class="wcu-icon">
+          <i class="fas fa-store"></i>
+        </div>
+        <h3>Trusted Restaurants</h3>
+        <p>
+          Order from top-rated and verified restaurants near you.
+        </p>
+      </div>
+    </div>
+
+    <!-- CARD 5 -->
+    <div class="col-12 col-md-4 mb-4">
+      <div class="wcu-card-new">
+        <div class="wcu-icon">
+          <i class="fas fa-wallet"></i>
+        </div>
+        <h3>Easy Payments</h3>
+        <p>
+          Pay securely using UPI, cards, wallets, or cash on delivery.
+        </p>
+      </div>
+    </div>
+
+    <!-- CARD 6 -->
+    <div class="col-12 col-md-4 mb-4">
+      <div class="wcu-card-new">
+        <div class="wcu-icon">
+          <i class="fas fa-headset"></i>
+        </div>
+        <h3>24×7 Support</h3>
+        <p>
+          Quick help whenever you need it with instant customer support.
+        </p>
+      </div>
+    </div>
+
+    </div>
+  </div>
+</div>
+
+    <div class="explore-menu-section pt-5 pb-5" id="exploreMenuSection">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h1 class="menu-section-heading">Explore Menu</h1>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="shadow menu-item-card p-3 mb-3">
+              <img
+                src="https://d2clawv67efefq.cloudfront.net/ccbp-responsive-website/em-ginger-fried-img.png"
+                class="menu-item-image w-100"
+              />
+              <h1 class="menu-card-title">Non-Veg Starters</h1>
+              <a href="/nonveg" class="menu-item-link">
+                View All
+                <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right-short" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    fill-rule="evenodd"
+                    d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="shadow menu-item-card p-3 mb-3">
+              <img
+                src="https://d2clawv67efefq.cloudfront.net/ccbp-responsive-website/em-veg-starters-img.png"
+                class="menu-item-image w-100"
+              />
+              <h1 class="menu-card-title">Veg Starters</h1>
+              <a href="/veg" class="menu-item-link">
+                View All
+                <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    fill-rule="evenodd"
+                    d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="menu-item-card shadow p-3 mb-3">
+              <img
+                src="https://d2clawv67efefq.cloudfront.net/ccbp-responsive-website/em-soup-img.png"
+                class="menu-item-image w-100"
+              />
+              <h1 class="menu-card-title">Soups</h1>
+              <a href="/soups" class="menu-item-link">
+                View All
+                <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    fill-rule="evenodd"
+                    d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="menu-item-card shadow p-3 mb-3">
+              <img
+                src="https://d2clawv67efefq.cloudfront.net/ccbp-responsive-website/em-grilled-seafood-img.png"
+                class="menu-item-image w-100"
+              />
+              <h1 class="menu-card-title">Fish & Sea food</h1>
+              <a href="/seafood" class="menu-item-link">
+                View All
+                <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    fill-rule="evenodd"
+                    d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="menu-item-card shadow p-3 mb-3">
+              <img
+                src="https://d2clawv67efefq.cloudfront.net/ccbp-responsive-website/em-hyderabadi-biryani-img.png"
+                class="menu-item-image w-100"
+              />
+              <h1 class="menu-card-title">Main Course</h1>
+              <a href="/maincourse" class="menu-item-link">
+                View All
+                <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    fill-rule="evenodd"
+                    d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="menu-item-card shadow p-3 mb-3">
+              <img
+                src="https://d2clawv67efefq.cloudfront.net/ccbp-responsive-website/em-mushroom-noodles-img.png"
+                class="menu-item-image w-100"
+              />
+              <h1 class="menu-card-title">Noodles</h1>
+              <a href="/noodles" class="menu-item-link">
+                View All
+                <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    fill-rule="evenodd"
+                    d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="menu-item-card shadow p-3 mb-3">
+              <img
+                src="https://d2clawv67efefq.cloudfront.net/ccbp-responsive-website/em-gluten-img.png"
+                class="menu-item-image w-100"
+              />
+              <h1 class="menu-card-title">Salads</h1>
+              <a href="/salads" class="menu-item-link">
+                View All
+                <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    fill-rule="evenodd"
+                    d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="menu-item-card shadow p-3 mb-3">
+              <img
+                src="https://d2clawv67efefq.cloudfront.net/ccbp-responsive-website/em-coffee-bourbon-img.png"
+                class="menu-item-image w-100"
+              />
+              <h1 class="menu-card-title">Desserts</h1>
+              <a href="/desserts" class="menu-item-link">
+                View All
+                <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    fill-rule="evenodd"
+                    d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="healthy-food-section pt-5 pb-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-5">
+            <div class="text-center">
+              <img
+                src="https://d2clawv67efefq.cloudfront.net/ccbp-responsive-website/healthy-food-plate-img.png"
+                class="healthy-food-section-img"
+              />
+            </div>
+          </div>
+          <div class="col-12 col-md-7">
+            <h1 class="healthy-food-section-heading">
+              Fresh, Healthy, Organic, Delicious Fruits
+            </h1>
+            <p class="healthy-food-section-description">
+              Say no to harmful chemicals and go fully organic with our range of
+              fresh fruits and veggies. Pamper your body and your senses with
+              the true and unadulterated gifts from mother nature. with the true
+              and unadulterated gifts from mother nature.
+            </p>
+          <a href="https://youtube.com" target="_blank">
+            <button class="custom-button">
+              <i class="fas fa-play-circle mr-2"></i> Watch Video
+            </button>
+          </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="delivery-and-payment-section pt-5 pb-5" id="deliveryPaymentSection">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-5 order-1 order-md-2">
+            <div class="text-center">
+              <img
+                src="https://d2clawv67efefq.cloudfront.net/ccbp-responsive-website/delivery-payment-section-img.png"
+                class="delivery-and-payment-section-img"
+              />
+            </div>
+          </div>
+          <div class="col-12 col-md-7 order-2 order-md-1">
+            <h1 class="delivery-and-payment-section-heading">
+              Delivery and Payment
+            </h1>
+            <p class="delivery-and-payment-section-description">
+              Enjoy hassle-free payment with the plenitude of payment options
+              available for you. Get live tracking and locate your food on a
+              live map. It's quite a sight to see your food arrive to your door.
+              Plus, you get a 5% discount on every order every time you pay
+              online.
+            </p>
+              <a href="{{ url_for('checkout') }}">
+                <button class="custom-button">
+                  <i class="fas fa-shopping-bag mr-2"></i> Order Now
+                </button>
+              </a>
+            <div class="mt-3">
+              <img
+                src="https://d2clawv67efefq.cloudfront.net/ccbp-responsive-website/visa-card-img.png"
+                class="payment-card-img"
+              />
+              <img
+                src="https://d2clawv67efefq.cloudfront.net/ccbp-responsive-website/master-card-img.png"
+                class="payment-card-img"
+              />
+              <img
+                src="https://d2clawv67efefq.cloudfront.net/ccbp-responsive-website/paypal-card-img.png"
+                class="payment-card-img"
+              />
+              <img
+                src="https://d2clawv67efefq.cloudfront.net/ccbp-responsive-website/american-express-img.png"
+                class="payment-card-img"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="thanking-customers-section pt-5 pb-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-7 d-flex flex-column justify-content-center">
+              <h1 class="thanking-customers-section-heading">
+              Thank you for being a valuable customer to us.
+            </h1>
+            <p class="thanking-customers-section-description">
+              We have a surprise gift for you
+            </p>
+            <div class="d-md-none">
+              <img
+                src="https://d2clawv67efefq.cloudfront.net/ccbp-responsive-website/thanking-customers-section-img.png"
+                class="thanking-customers-section-img"
+              />
+            </div>
+            <div>
+              <button type="button" class="custom-button" data-toggle="modal" data-target="#exampleModal">
+                Redeem Gift
+              </button>
+              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog mt-5">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title thanking-customers-section-modal-title" id="exampleModalLabel">
+                        Gift Voucher
+                      </h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <img
+                        src="https://d2clawv67efefq.cloudfront.net/ccbp-responsive-website/gift-voucher-img.png"
+                        class="w-100"
+                      />
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                        Close
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-5 d-none d-md-block">
+            <img
+              src="https://d2clawv67efefq.cloudfront.net/ccbp-responsive-website/thanking-customers-section-img.png"
+              class="thanking-customers-section-img"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- FOLLOW US SECTION -->
+<div class="follow-us-section pt-5 pb-5" id="followUsSection">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h1 class="follow-us-section-heading mb-4">Connect With Us</h1>
+        <p class="text-muted mb-4">
+          Follow us on social media for latest offers & updates
+        </p>
+      </div>
+
+      <div class="col-12">
+        <div class="d-flex justify-content-center gap-4 flex-wrap">
+
+        <a href="https://twitter.com" target="_blank" class="social-link twitter">
+          <i class="fa-brands fa-twitter"></i>
+        </a>
+
+        <a href="https://instagram.com" target="_blank" class="social-link instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+
+        <a href="https://facebook.com" target="_blank" class="social-link facebook">
+          <i class="fa-brands fa-facebook-f"></i>
+        </a>
+
+        <a href="https://youtube.com" target="_blank" class="social-link youtube">
+          <i class="fa-brands fa-youtube"></i>
+        </a>
+
+        <a href="https://wa.me/919999999999" target="_blank" class="social-link whatsapp">
+          <i class="fa-brands fa-whatsapp"></i>
+        </a>
+
+      </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER SECTION -->
+<footer class="footer-section pt-5 pb-4">
+  <div class="container">
+    <div class="row text-center">
+
+      <div class="col-12 mb-3">
+        <img
+          <img src="{{ url_for('static', filename='images/platora-logo.png') }}"
+          class="footer-logo"
+        />
+      </div>
+
+      <div class="col-12 mb-2">
+        <p class="footer-email">
+          <i class="fa-solid fa-envelope"></i> orderfood@platora.com
+        </p>
+      </div>
+
+      <div class="col-12 mb-3">
+        <p class="footer-address">
+          <i class="fa-solid fa-location-dot"></i>
+          123 Ayur Vigyan Nagar, New Delhi, India
+        </p>
+      </div>
+
+      <div class="col-12">
+        <p class="footer-copy">
+          © 2026 Platora. All Rights Reserved.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</footer>
+
+
+    <script src="{{ url_for('static', filename='js/animations.js') }}"></script>
+
+  </body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your Cart</title>
+
+  <!-- Bootstrap -->
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+  />
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+  />
+
+  <!-- Custom CSS -->
+  <link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/style.css') }}"
+  />
+
+  <style>
+    body {
+      background: #f4f6f9;
+    }
+
+    .cart-container {
+      max-width: 900px;
+      margin: auto;
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+      animation: fadeIn 0.6s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .cart-title {
+      font-size: 36px;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 30px;
+      color: #222;
+    }
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px;
+      border-radius: 12px;
+      background: #f9f9f9;
+      margin-bottom: 16px;
+      transition: all 0.3s ease;
+    }
+
+    .cart-item:hover {
+      transform: scale(1.02);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .item-name {
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .item-qty {
+      font-size: 14px;
+      color: #555;
+    }
+
+    .item-price {
+      font-size: 16px;
+      font-weight: bold;
+      color: #28a745;
+    }
+
+    .remove-btn {
+      background: #dc3545;
+      border: none;
+      color: white;
+      padding: 8px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .remove-btn:hover {
+      background: #b52a37;
+    }
+
+    .total-box {
+      text-align: right;
+      margin-top: 30px;
+      font-size: 24px;
+      font-weight: bold;
+      color: #000;
+    }
+
+    .cart-actions {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 30px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .action-btn {
+      padding: 12px 24px;
+      border-radius: 10px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.3s;
+      display: inline-block;
+    }
+
+    .action-btn:hover {
+      transform: scale(1.05);
+      text-decoration: none;
+    }
+
+    .continue-btn {
+      background: #ffc107;
+      color: #000;
+    }
+
+    .clear-btn {
+      background: #6c757d;
+      color: #fff;
+    }
+
+    .checkout-btn {
+      background: #28a745;
+      color: #fff;
+    }
+
+    .empty-cart {
+      text-align: center;
+      font-size: 22px;
+      color: #777;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 576px) {
+      .cart-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+      }
+      .total-box {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container pt-5 pb-5">
+
+  <div class="cart-container">
+
+    <h1 class="cart-title">
+      <i class="fas fa-shopping-cart"></i> Your Cart
+    </h1>
+
+    {% if cart and cart|length > 0 %}
+
+      {% for item in cart %}
+      <div class="cart-item">
+        <div>
+          <div class="item-name">{{ item.name }}</div>
+          <div class="item-qty">Quantity: {{ item.qty }}</div>
+          <div class="item-price">
+            ₹{{ item.price }} × {{ item.qty }}
+          </div>
+        </div>
+
+        <form action="/remove-from-cart" method="POST">
+          <input type="hidden" name="name" value="{{ item.name }}">
+          <button type="submit" class="remove-btn">
+            <i class="fas fa-trash"></i>
+          </button>
+        </form>
+      </div>
+      {% endfor %}
+
+      <div class="total-box">
+        Total Amount: ₹{{ total }}
+      </div>
+
+      <div class="cart-actions">
+        <a href="/#exploreMenuSection" class="action-btn continue-btn">
+          ← Continue Shopping
+        </a>
+
+        <a href="/clear-cart" class="action-btn clear-btn">
+          Clear Cart
+        </a>
+
+        <a href="{{ url_for('checkout') }}" class="action-btn checkout-btn">
+          Proceed to Checkout →
+        </a>
+
+      </div>
+
+    {% else %}
+      <div class="empty-cart">
+        🛒 Your cart is empty
+      </div>
+
+      <div class="text-center mt-4">
+        <a href="/#exploreMenuSection" class="action-btn continue-btn">
+          Browse Menu
+        </a>
+      </div>
+    {% endif %}
+
+  </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Signup</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <style>
+    body {
+      height: 100vh;
+      background: linear-gradient(135deg, #43cea2, #185a9d);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .auth-card {
+      background: white;
+      padding: 40px;
+      width: 100%;
+      max-width: 420px;
+      border-radius: 16px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      animation: fadeIn 0.8s ease;
+    }
+
+    @keyframes fadeIn {
+      from {opacity:0;}
+      to {opacity:1;}
+    }
+
+    .auth-title {
+      text-align: center;
+      font-size: 30px;
+      font-weight: bold;
+      margin-bottom: 25px;
+      color: #185a9d;
+    }
+
+    .signup-btn {
+      background: #185a9d;
+      border: none;
+      color: white;
+      width: 100%;
+      padding: 12px;
+      border-radius: 10px;
+      font-size: 18px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .signup-btn:hover {
+      background: #0f3c6e;
+      transform: scale(1.03);
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="auth-card">
+  <div class="auth-title">Create Account</div>
+
+  {% if error %}
+  <div class="alert alert-danger text-center">
+    {{ error }}
+  </div>
+  {% endif %}
+
+  <form method="POST">
+    <input name="name" class="form-control mb-3" placeholder="Full Name" required>
+    <input type="email" name="email" class="form-control mb-3" placeholder="Email" required>
+    <input name="password" type="password" class="form-control mb-3" placeholder="Password" required>
+    <button class="signup-btn">Sign Up</button>
+  </form>
+
+  <div class="text-center mt-3">
+    Already have an account? <a href="/login">Login</a>
+  </div>
+</div>
+
+<script>
+  if (window.history.replaceState) {
+    window.history.replaceState(null, null, window.location.href);
+  }
+</script>
+
+</body>
+</html>

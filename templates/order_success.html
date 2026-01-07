@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Order Placed | Platora</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+  <style>
+    body {
+      background: #f4f4f4;
+      font-family: "Segoe UI", sans-serif;
+    }
+
+    .success-container {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .success-card {
+      background: #fff;
+      max-width: 460px;
+      width: 100%;
+      padding: 40px 30px;
+      border-radius: 18px;
+      text-align: center;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+      animation: fadeInUp 0.8s ease;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .success-icon {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      background: #e8f9f1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: auto;
+      margin-bottom: 20px;
+    }
+
+    .success-icon i {
+      font-size: 40px;
+      color: #28a745;
+    }
+
+    .success-title {
+      font-size: 26px;
+      font-weight: 800;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .success-text {
+      color: #666;
+      font-size: 15px;
+      margin-bottom: 25px;
+    }
+
+    .order-id {
+      background: #f8f8f8;
+      padding: 10px;
+      border-radius: 10px;
+      font-size: 14px;
+      margin-bottom: 25px;
+    }
+
+    .success-btn {
+      background: linear-gradient(135deg, #ff5722, #ff784e);
+      color: white;
+      border: none;
+      width: 100%;
+      padding: 14px;
+      font-size: 17px;
+      font-weight: 700;
+      border-radius: 14px;
+      transition: 0.3s;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .success-btn:hover {
+      transform: scale(1.03);
+      color: white;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="success-container">
+  <div class="success-card">
+
+    <div class="success-icon">
+      <i class="fas fa-check"></i>
+    </div>
+
+    <div class="success-title">
+      Order Placed Successfully!
+    </div>
+
+    <div class="success-text">
+      Your delicious food is being prepared 🍽️<br>
+      You will receive it shortly.
+    </div>
+
+    <div class="order-id">
+      <strong>Order ID:</strong> #FM{{ order_id }}
+    </div>
+
+    <a href="{{ url_for('home') }}" class="success-btn">
+      Back to Home
+    </a>
+
+  </div>
+</div>
+
+</body>
+</html>

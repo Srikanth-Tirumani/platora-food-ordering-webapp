@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Checkout | Platora</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+  <style>
+    body {
+      background: #f4f4f4;
+      font-family: "Segoe UI", sans-serif;
+    }
+
+    /* ================= HEADER ================= */
+    .checkout-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 64px;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 22px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+
+    .checkout-header h5 {
+      margin: 0;
+      font-weight: 700;
+      color: #333;
+    }
+
+    .cancel-link {
+      color: #ff5252;
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 15px;
+    }
+
+    .cancel-link:hover {
+      text-decoration: underline;
+    }
+
+    /* ================= CONTAINER ================= */
+    .checkout-container {
+      max-width: 1100px;
+      margin: 100px auto 40px;
+      padding: 0 15px;
+    }
+
+    /* ================= CARD ================= */
+    .checkout-card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 22px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+      margin-bottom: 22px;
+    }
+
+    .section-title {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: #333;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* ================= ADDRESS ================= */
+    .address-box {
+      border: 1.5px dashed #ff5722;
+      padding: 16px;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: 0.3s;
+      background: #fff;
+    }
+
+    .address-box:hover {
+      background: #fff3ee;
+    }
+
+    .address-box strong {
+      font-size: 16px;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    /* ================= PAYMENT ================= */
+    .payment-option {
+      border: 1px solid #e0e0e0;
+      padding: 14px 16px;
+      border-radius: 12px;
+      margin-bottom: 12px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .payment-option:hover {
+      border-color: #ff5722;
+      background: #fff3ee;
+      transform: scale(1.01);
+    }
+
+    /* ================= CART ================= */
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      font-size: 15px;
+    }
+
+    .cart-item span {
+      font-weight: 600;
+    }
+
+    .bill-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .bill-total {
+      font-size: 18px;
+      font-weight: 800;
+      border-top: 1px dashed #ddd;
+      padding-top: 12px;
+      margin-top: 12px;
+      color: #000;
+    }
+
+    /* ================= BUTTON ================= */
+    .place-order-btn {
+      background: linear-gradient(135deg, #ff5722, #ff784e);
+      color: white;
+      border: none;
+      width: 100%;
+      padding: 14px;
+      font-size: 18px;
+      font-weight: 700;
+      border-radius: 14px;
+      transition: 0.3s;
+      margin-top: 14px;
+    }
+
+    .place-order-btn:hover {
+      transform: scale(1.03);
+    }
+
+    /* ================= MOBILE ================= */
+    @media(max-width: 768px) {
+      .checkout-container {
+        margin-top: 90px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<div class="checkout-header">
+  <h5>Order Details</h5>
+  <a href="{{ url_for('cart') }}" class="cancel-link">Cancel</a>
+</div>
+
+<!-- ================= MAIN ================= -->
+<div class="checkout-container">
+  <div class="row">
+
+    <!-- LEFT -->
+    <div class="col-md-7">
+
+      <div class="checkout-card">
+        <div class="section-title">
+          <i class="fas fa-map-marker-alt"></i> Delivery Address
+        </div>
+        <div class="address-box">
+          <strong>Home</strong>
+          123, Ayur Vigyan Nagar,<br>
+          New Delhi – 110049
+        </div>
+      </div>
+
+      <div class="checkout-card">
+        <div class="section-title">
+          <i class="fas fa-credit-card"></i> Payment Method
+        </div>
+
+        <div class="payment-option">
+          <i class="fa-brands fa-google-pay fa-2x"></i> Google Pay
+        </div>
+
+        <div class="payment-option">
+          <i class="fa-brands fa-cc-visa fa-2x"></i> Credit / Debit Card
+        </div>
+
+        <div class="payment-option">
+          <i class="fa-brands fa-cc-paypal fa-2x"></i> PayPal
+        </div>
+
+        <div class="payment-option">
+          <i class="fas fa-money-bill-wave fa-2x"></i> Cash on Delivery
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT -->
+    <div class="col-md-5">
+      <div class="checkout-card">
+        <div class="section-title">
+          <i class="fas fa-shopping-cart"></i> Order Summary
+        </div>
+
+        {% for item in cart %}
+        <div class="cart-item">
+          {{ item.name }} × {{ item.qty }}
+          <span>₹{{ item.price * item.qty }}</span>
+        </div>
+        {% endfor %}
+
+        <hr>
+
+        <div class="bill-row">
+          Item Total <span>₹{{ total }}</span>
+        </div>
+        <div class="bill-row">
+          Delivery Fee <span>₹30</span>
+        </div>
+        <div class="bill-row">
+          Platform Fee <span>₹5</span>
+        </div>
+
+        <div class="bill-row bill-total">
+          To Pay <span>₹{{ total + 35 }}</span>
+        </div>
+
+        <form action="{{ url_for('order_success') }}" method="POST">
+        <button type="submit" class="place-order-btn">
+            Place Order
+        </button>
+        </form>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

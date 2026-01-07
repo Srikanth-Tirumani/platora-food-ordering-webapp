@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fish & Sea Food</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body class="menu-page-bg">
+
+<div class="container pt-5 pb-5">
+
+  <h1 class="menu-section-heading text-center mb-4 nonveg-title">
+    Fish & Sea Food
+  </h1>
+
+  <div class="row">
+
+<!-- 1 -->
+<div class="col-md-4"><div class="menu-item-card p-3 mb-4">
+<div class="menu-image-wrapper">
+<img src="{{ url_for('static', filename='images/fish-fry.jpg') }}" class="menu-item-image w-100">
+</div>
+<h1 class="menu-card-title">Fish Fry</h1>
+<div class="rating">
+<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+</div>
+<p class="menu-item-price">₹280</p>
+<form action="/add-to-cart" method="POST">
+<input type="hidden" name="name" value="Fish Fry">
+<input type="hidden" name="price" value="280">
+<button class="add-cart-btn">Add to Cart</button>
+</form>
+</div></div>
+
+<!-- 2 -->
+<div class="col-md-4"><div class="menu-item-card p-3 mb-4">
+<div class="menu-image-wrapper">
+<img src="{{ url_for('static', filename='images/fish-curry.jpg') }}" class="menu-item-image w-100">
+</div>
+<h1 class="menu-card-title">Fish Curry</h1>
+<div class="rating">
+<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+</div>
+<p class="menu-item-price">₹300</p>
+<form action="/add-to-cart" method="POST">
+<input type="hidden" name="name" value="Fish Curry">
+<input type="hidden" name="price" value="300">
+<button class="add-cart-btn">Add to Cart</button>
+</form>
+</div></div>
+
+<!-- 3 -->
+<div class="col-md-4"><div class="menu-item-card p-3 mb-4">
+<div class="menu-image-wrapper">
+<img src="{{ url_for('static', filename='images/fish-tikka.jpg') }}" class="menu-item-image w-100">
+</div>
+<h1 class="menu-card-title">Fish Tikka</h1>
+<div class="rating">
+<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+</div>
+<p class="menu-item-price">₹320</p>
+<form action="/add-to-cart" method="POST">
+<input type="hidden" name="name" value="Fish Tikka">
+<input type="hidden" name="price" value="320">
+<button class="add-cart-btn">Add to Cart</button>
+</form>
+</div></div>
+
+<!-- 4 -->
+<div class="col-md-4"><div class="menu-item-card p-3 mb-4">
+<div class="menu-image-wrapper">
+<img src="{{ url_for('static', filename='images/prawn-fry.jpg') }}" class="menu-item-image w-100">
+</div>
+<h1 class="menu-card-title">Prawn Fry</h1>
+<div class="rating">
+<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+</div>
+<p class="menu-item-price">₹350</p>
+<form action="/add-to-cart" method="POST">
+<input type="hidden" name="name" value="Prawn Fry">
+<input type="hidden" name="price" value="350">
+<button class="add-cart-btn">Add to Cart</button>
+</form>
+</div></div>
+
+<!-- 5 -->
+<div class="col-md-4"><div class="menu-item-card p-3 mb-4">
+<div class="menu-image-wrapper">
+<img src="{{ url_for('static', filename='images/prawn-curry.jpg') }}" class="menu-item-image w-100">
+</div>
+<h1 class="menu-card-title">Prawn Curry</h1>
+<div class="rating">
+<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+</div>
+<p class="menu-item-price">₹340</p>
+<form action="/add-to-cart" method="POST">
+<input type="hidden" name="name" value="Prawn Curry">
+<input type="hidden" name="price" value="340">
+<button class="add-cart-btn">Add to Cart</button>
+</form>
+</div></div>
+
+<!-- 6 -->
+<div class="col-md-4"><div class="menu-item-card p-3 mb-4">
+<div class="menu-image-wrapper">
+<img src="{{ url_for('static', filename='images/prawn-masala.jpg') }}" class="menu-item-image w-100">
+</div>
+<h1 class="menu-card-title">Prawn Masala</h1>
+<div class="rating">
+<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+</div>
+<p class="menu-item-price">₹360</p>
+<form action="/add-to-cart" method="POST">
+<input type="hidden" name="name" value="Prawn Masala">
+<input type="hidden" name="price" value="360">
+<button class="add-cart-btn">Add to Cart</button>
+</form>
+</div></div>
+
+<!-- 7 -->
+<div class="col-md-4"><div class="menu-item-card p-3 mb-4">
+<div class="menu-image-wrapper">
+<img src="{{ url_for('static', filename='images/crab-fry.jpg') }}" class="menu-item-image w-100">
+</div>
+<h1 class="menu-card-title">Crab Fry</h1>
+<div class="rating">
+<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+</div>
+<p class="menu-item-price">₹420</p>
+<form action="/add-to-cart" method="POST">
+<input type="hidden" name="name" value="Crab Fry">
+<input type="hidden" name="price" value="420">
+<button class="add-cart-btn">Add to Cart</button>
+</form>
+</div></div>
+
+<!-- 8 -->
+<div class="col-md-4"><div class="menu-item-card p-3 mb-4">
+<div class="menu-image-wrapper">
+<img src="{{ url_for('static', filename='images/crab-curry.jpg') }}" class="menu-item-image w-100">
+</div>
+<h1 class="menu-card-title">Crab Curry</h1>
+<div class="rating">
+<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+</div>
+<p class="menu-item-price">₹430</p>
+<form action="/add-to-cart" method="POST">
+<input type="hidden" name="name" value="Crab Curry">
+<input type="hidden" name="price" value="430">
+<button class="add-cart-btn">Add to Cart</button>
+</form>
+</div></div>
+
+<!-- 9 -->
+<div class="col-md-4"><div class="menu-item-card p-3 mb-4">
+<div class="menu-image-wrapper">
+<img src="{{ url_for('static', filename='images/fish-manchurian.jpg') }}" class="menu-item-image w-100">
+</div>
+<h1 class="menu-card-title">Fish Manchurian</h1>
+<div class="rating">
+<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+</div>
+<p class="menu-item-price">₹290</p>
+<form action="/add-to-cart" method="POST">
+<input type="hidden" name="name" value="Fish Manchurian">
+<input type="hidden" name="price" value="290">
+<button class="add-cart-btn">Add to Cart</button>
+</form>
+</div></div>
+
+<!-- 10 -->
+<div class="col-md-4"><div class="menu-item-card p-3 mb-4">
+<div class="menu-image-wrapper">
+<img src="{{ url_for('static', filename='images/fish-65.jpg') }}" class="menu-item-image w-100">
+</div>
+<h1 class="menu-card-title">Fish 65</h1>
+<div class="rating">
+<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+</div>
+<p class="menu-item-price">₹270</p>
+<form action="/add-to-cart" method="POST">
+<input type="hidden" name="name" value="Fish 65">
+<input type="hidden" name="price" value="270">
+<button class="add-cart-btn">Add to Cart</button>
+</form>
+</div></div>
+
+<!-- 11 -->
+<div class="col-md-4"><div class="menu-item-card p-3 mb-4">
+<div class="menu-image-wrapper">
+<img src="{{ url_for('static', filename='images/prawn-65.jpg') }}" class="menu-item-image w-100">
+</div>
+<h1 class="menu-card-title">Prawn 65</h1>
+<div class="rating">
+<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+</div>
+<p class="menu-item-price">₹340</p>
+<form action="/add-to-cart" method="POST">
+<input type="hidden" name="name" value="Prawn 65">
+<input type="hidden" name="price" value="340">
+<button class="add-cart-btn">Add to Cart</button>
+</form>
+</div></div>
+
+<!-- 12 -->
+<div class="col-md-4"><div class="menu-item-card p-3 mb-4">
+<div class="menu-image-wrapper">
+<img src="{{ url_for('static', filename='images/fish-pakora.jpg') }}" class="menu-item-image w-100">
+</div>
+<h1 class="menu-card-title">Fish Pakora</h1>
+<div class="rating">
+<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+</div>
+<p class="menu-item-price">₹260</p>
+<form action="/add-to-cart" method="POST">
+<input type="hidden" name="name" value="Fish Pakora">
+<input type="hidden" name="price" value="260">
+<button class="add-cart-btn">Add to Cart</button>
+</form>
+</div></div>
+
+<!-- 13 -->
+<div class="col-md-4"><div class="menu-item-card p-3 mb-4">
+<div class="menu-image-wrapper">
+<img src="{{ url_for('static', filename='images/fish-biryani.jpg') }}" class="menu-item-image w-100">
+</div>
+<h1 class="menu-card-title">Fish Biryani</h1>
+<div class="rating">
+<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+</div>
+<p class="menu-item-price">₹330</p>
+<form action="/add-to-cart" method="POST">
+<input type="hidden" name="name" value="Fish Biryani">
+<input type="hidden" name="price" value="330">
+<button class="add-cart-btn">Add to Cart</button>
+</form>
+</div></div>
+
+<!-- 14 -->
+<div class="col-md-4"><div class="menu-item-card p-3 mb-4">
+<div class="menu-image-wrapper">
+<img src="{{ url_for('static', filename='images/prawn-biryani.jpg') }}" class="menu-item-image w-100">
+</div>
+<h1 class="menu-card-title">Prawn Biryani</h1>
+<div class="rating">
+<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+</div>
+<p class="menu-item-price">₹360</p>
+<form action="/add-to-cart" method="POST">
+<input type="hidden" name="name" value="Prawn Biryani">
+<input type="hidden" name="price" value="360">
+<button class="add-cart-btn">Add to Cart</button>
+</form>
+</div></div>
+
+<!-- 15 -->
+<div class="col-md-4"><div class="menu-item-card p-3 mb-4">
+<div class="menu-image-wrapper">
+<img src="{{ url_for('static', filename='images/sea-food-platter.jpg') }}" class="menu-item-image w-100">
+</div>
+<h1 class="menu-card-title">Sea Food Platter</h1>
+<div class="rating">
+<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+</div>
+<p class="menu-item-price">₹450</p>
+<form action="/add-to-cart" method="POST">
+<input type="hidden" name="name" value="Sea Food Platter">
+<input type="hidden" name="price" value="450">
+<button class="add-cart-btn">Add to Cart</button>
+</form>
+</div></div>
+
+</div>
+
+<nav class="navbar navbar-light bg-white mt-4">
+  <div class="container justify-content-center">
+    <a href="/#exploreMenuSection" class="back-btn">← Back to Menu</a>
+  </div>
+</nav>
+
+</div>
+
+<script src="{{ url_for('static', filename='js/animations.js') }}"></script>
+</body>
+</html>
