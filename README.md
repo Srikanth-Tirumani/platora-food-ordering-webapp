@@ -61,7 +61,7 @@ Platora provides a seamless food ordering experience where:
 platora/
 │
 ├── app.py
-├── foodmunch.db
+├── platora.db
 │
 ├── templates/
 │ ├── login.html
