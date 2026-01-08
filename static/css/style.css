@@ -21,10 +21,16 @@
   font-family: "Roboto";
 }
 .banner-section-bg-container {
-  background-image: url("https://d2clawv67efefq.cloudfront.net/ccbp-responsive-website/foodmunch-banner-bg.png");
-  height: 100vh;
+  background-image: linear-gradient(
+      rgba(0,0,0,0.55),
+      rgba(0,0,0,0.55)
+    ),
+    url("/static/images/banner-bg.jpg");
   background-size: cover;
+  background-position: center;
+  min-height: 100vh;
 }
+
 .banner-heading {
   color: white;
   font-family: "Roboto";
@@ -56,6 +62,7 @@
   border-color: #d0b200;
   border-radius: 8px;
 }
+
 
 
 .wcu-section {
