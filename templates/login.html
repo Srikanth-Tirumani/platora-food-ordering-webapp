@@ -16,31 +16,33 @@
     }
 
     .auth-card {
-      background: rgba(255,255,255,0.95);
-      padding: 40px;
+      background: rgba(255,255,255,0.96);
+      padding: 55px;
       width: 100%;
-      max-width: 420px;
-      border-radius: 16px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      max-width: 520px;      /* increased width */
+      min-height: 420px;     /* increased height */
+      border-radius: 18px;
+      box-shadow: 0 25px 45px rgba(0,0,0,0.25);
       animation: slideUp 0.8s ease;
     }
 
     @keyframes slideUp {
-      from {transform: translateY(40px); opacity:0;}
+      from {transform: translateY(50px); opacity:0;}
       to {transform: translateY(0); opacity:1;}
     }
 
     .auth-title {
       text-align: center;
-      font-size: 30px;
+      font-size: 34px;       /* bigger title */
       font-weight: bold;
-      margin-bottom: 25px;
+      margin-bottom: 35px;
       color: #ff5722;
     }
 
     .form-control {
-      height: 48px;
-      border-radius: 10px;
+      height: 55px;          /* bigger input */
+      border-radius: 12px;
+      font-size: 16px;
     }
 
     .login-btn {
@@ -48,21 +50,33 @@
       border: none;
       color: white;
       width: 100%;
-      padding: 12px;
-      border-radius: 10px;
-      font-size: 18px;
+      padding: 14px;
+      border-radius: 12px;
+      font-size: 20px;
       font-weight: bold;
       transition: 0.3s;
+      margin-top: 10px;
     }
 
     .login-btn:hover {
       background: #e64a19;
-      transform: scale(1.03);
+      transform: scale(1.04);
     }
 
     .link-text {
       text-align: center;
-      margin-top: 15px;
+      margin-top: 22px;
+      font-size: 16px;
+    }
+
+    .link-text a {
+      font-weight: bold;
+      color: #ff5722;
+      text-decoration: none;
+    }
+
+    .link-text a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -81,8 +95,8 @@
   {% endif %}
 
   <form method="POST">
-    <input type="email" name="email" class="form-control mb-3" placeholder="Email" required>
-    <input type="password" name="password" class="form-control mb-3" placeholder="Password" required>
+    <input type="email" name="email" class="form-control mb-4" placeholder="Email" required>
+    <input type="password" name="password" class="form-control mb-4" placeholder="Password" required>
     <button class="login-btn">Login</button>
   </form>
 

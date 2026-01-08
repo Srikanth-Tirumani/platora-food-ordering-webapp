@@ -15,26 +15,33 @@
     }
 
     .auth-card {
-      background: white;
-      padding: 40px;
+      background: rgba(255,255,255,0.97);
+      padding: 55px;
       width: 100%;
-      max-width: 420px;
-      border-radius: 16px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      max-width: 520px;     /* increased width */
+      min-height: 480px;    /* increased height */
+      border-radius: 18px;
+      box-shadow: 0 25px 45px rgba(0,0,0,0.25);
       animation: fadeIn 0.8s ease;
     }
 
     @keyframes fadeIn {
-      from {opacity:0;}
-      to {opacity:1;}
+      from {opacity:0; transform: translateY(40px);}
+      to {opacity:1; transform: translateY(0);}
     }
 
     .auth-title {
       text-align: center;
-      font-size: 30px;
+      font-size: 34px;
       font-weight: bold;
-      margin-bottom: 25px;
+      margin-bottom: 35px;
       color: #185a9d;
+    }
+
+    .form-control {
+      height: 55px;        /* bigger inputs */
+      border-radius: 12px;
+      font-size: 16px;
     }
 
     .signup-btn {
@@ -42,16 +49,32 @@
       border: none;
       color: white;
       width: 100%;
-      padding: 12px;
-      border-radius: 10px;
-      font-size: 18px;
+      padding: 14px;
+      border-radius: 12px;
+      font-size: 20px;
       font-weight: bold;
       transition: 0.3s;
+      margin-top: 10px;
     }
 
     .signup-btn:hover {
       background: #0f3c6e;
-      transform: scale(1.03);
+      transform: scale(1.04);
+    }
+
+    .text-center {
+      margin-top: 22px;
+      font-size: 16px;
+    }
+
+    .text-center a {
+      font-weight: bold;
+      color: #185a9d;
+      text-decoration: none;
+    }
+
+    .text-center a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -68,13 +91,13 @@
   {% endif %}
 
   <form method="POST">
-    <input name="name" class="form-control mb-3" placeholder="Full Name" required>
-    <input type="email" name="email" class="form-control mb-3" placeholder="Email" required>
-    <input name="password" type="password" class="form-control mb-3" placeholder="Password" required>
+    <input name="name" class="form-control mb-4" placeholder="Full Name" required>
+    <input type="email" name="email" class="form-control mb-4" placeholder="Email" required>
+    <input type="password" name="password" class="form-control mb-4" placeholder="Password" required>
     <button class="signup-btn">Sign Up</button>
   </form>
 
-  <div class="text-center mt-3">
+  <div class="text-center">
     Already have an account? <a href="/login">Login</a>
   </div>
 </div>
