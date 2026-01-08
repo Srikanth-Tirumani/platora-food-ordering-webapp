@@ -4,11 +4,14 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from functools import wraps
 
 app = Flask(__name__)
-app.secret_key = "Platora_secret_key"
+app.secret_key = os.environ.get("SECRET_KEY", "Platora_secret_key")
 app.config["SESSION_COOKIE_HTTPONLY"] = True
 
-DATABASE = "Platora.db"
-init_db() 
+import os
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DATABASE = os.path.join(BASE_DIR, "Platora.db")
+
 
 
 # ---------------- DATABASE CONNECTION ----------------
