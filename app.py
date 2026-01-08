@@ -8,6 +8,7 @@ app.secret_key = "Platora_secret_key"
 app.config["SESSION_COOKIE_HTTPONLY"] = True
 
 DATABASE = "Platora.db"
+init_db() 
 
 
 # ---------------- DATABASE CONNECTION ----------------
