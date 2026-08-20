@@ -1,0 +1,20 @@
+{
+  "name": "platora-mern",
+  "version": "1.0.0",
+  "description": "Platora Food Delivery - MERN Stack",
+  "main": "server.js",
+  "scripts": {
+    "server": "cd backend && node --watch server.js",
+    "client": "cd frontend && npm run dev",
+    "dev": "concurrently \"npm run server\" \"npm run client\" --kill-others --prefix-colors \"cyan,magenta\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "dependencies": {
+    "axios": "^1.13.6",
+    "framer-motion": "^12.38.0",
+    "lucide-react": "^0.577.0",
+    "react-router-dom": "^7.13.1"
+  }
+}
